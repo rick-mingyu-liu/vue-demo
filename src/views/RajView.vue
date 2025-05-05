@@ -165,7 +165,7 @@ const showDialog = ref(false)
 const form = ref({ name: '', email: '', message: '' })
 
 function submitForm() {
-  // Placeholder: handle form submission
+
   console.log('Form submitted:', form.value)
   showDialog.value = false
 }
