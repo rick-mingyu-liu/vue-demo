@@ -90,7 +90,6 @@ onMounted(fetchPrices)
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   scroll-behavior: smooth;
   position: absolute;
   top: 0;
@@ -117,11 +116,11 @@ onMounted(fetchPrices)
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  will-change: transform; /* Optimize animations */
+  will-change: transform; 
 }
 
 .price-item {
-  height: 2.2rem; /* Fixed height for price items */
+  height: 2.2rem; 
 }
 
 ul {
@@ -146,7 +145,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  will-change: transform; /* Optimize animations */
+  will-change: transform; 
 }
 
 .container-avatar:hover {
