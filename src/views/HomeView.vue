@@ -9,9 +9,7 @@ import { RouterLink } from 'vue-router'
   <main class="mainpage">
     <v-container class="app">
       <v-container class="home flex flex-row align-center justify-center text-center">
-        <v-text class="title text-h3 font-weight-bold text-center">
-          Portal Co-op Team Summer 2025!
-        </v-text>
+        <v-text class="title text-h3 font-weight-bold text-center"> Meet the Interns! </v-text>
         <v-row class="flex flex-row align-center justify-center space-evenly ma-10">
           <div class="container-avatar mx-auto mt-3">
             <div class="mx-auto mt-3">
@@ -53,6 +51,9 @@ import { RouterLink } from 'vue-router'
             </div>
           </div>
         </v-row>
+        <br />
+        <br />
+        <v-text class="title text-h3 font-weight-bold text-center"> Reach out to us! </v-text>
       </v-container>
     </v-container>
   </main>

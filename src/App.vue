@@ -3,7 +3,10 @@
 <template>
   <v-app class="app">
     <v-app-bar app color="white" dark>
-      <v-toolbar-title class="navbar-text text-h6">Portal Co-op Team Summer 2025</v-toolbar-title>
+      <v-toolbar-title class="navbar-text text-h6">
+        <v-icon size="50" color="#000000" icon="mdi-ufo-outline"></v-icon>
+        Portal Co-op Team Summer 2025</v-toolbar-title
+      >
 
       <v-spacer />
 
