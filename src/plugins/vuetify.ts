@@ -1,7 +1,10 @@
-// src/plugins/vuetify.ts
-import 'vuetify/styles'
+// plugins/vuetify.js
+import 'vuetify/styles'              // ← this line pulls in all of Vuetify’s CSS
 import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-const vuetify = createVuetify()
-
-export default vuetify
+export default createVuetify({
+  components,
+  directives,
+})
