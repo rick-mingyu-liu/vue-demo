@@ -21,11 +21,11 @@
       <v-btn
         color="primary"
         variant="outlined"
-        href="https://www.linkedin.com/in/rick-mingyu-liu/"
+        href="https://rick-mingyu-liu.github.io/personal-web/"
         target="_blank"
         class="mt-4"
       >
-        Connect on LinkedIn
+        Personal Website
       </v-btn>
     </section>
   </div>
