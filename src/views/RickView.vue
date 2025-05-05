@@ -5,13 +5,10 @@
         Hi, I'm Rick <span class="wave">👋</span>
       </h1>
       <p>
+        I'm a second year Computational Mathematics student at the University of Waterloo.
         Growing up, I was always fascinated by problem-solving.
         That passion gradually led me to the world of programming.
-      </p>
-      <p>
-        In Grade 12, I realized how powerful programming can be —
-        how it can solve problems and even change the world.
-        Since then, I've committed to learning deeply, working hard, and
+        I've committed to learning deeply, working hard, and
         building cool projects.
       </p>
       <p>
@@ -19,6 +16,17 @@
         a real impact. I'm especially grateful for the chance to pursue an AI developer role, and I’m
         ready to give my full effort to be part of that journey!🌈
       </p>
+
+      <!-- Vuetify Button -->
+      <v-btn
+        color="primary"
+        variant="outlined"
+        href="https://www.linkedin.com/in/rick-mingyu-liu/"
+        target="_blank"
+        class="mt-4"
+      >
+        Connect on LinkedIn
+      </v-btn>
     </section>
   </div>
 </template>
