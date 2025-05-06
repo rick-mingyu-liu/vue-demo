@@ -26,7 +26,7 @@ watch(
             :color="theme.darkMode ? 'white' : 'black'"
             icon="mdi-ufo-outline"
           ></v-icon>
-          Portal Co-op Team Summer 2025
+          Portal Team
         </v-toolbar-title>
       </RouterLink>
 
