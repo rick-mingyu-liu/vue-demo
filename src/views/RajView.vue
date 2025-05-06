@@ -165,7 +165,6 @@ const showDialog = ref(false)
 const form = ref({ name: '', email: '', message: '' })
 
 function submitForm() {
-
   console.log('Form submitted:', form.value)
   showDialog.value = false
 }

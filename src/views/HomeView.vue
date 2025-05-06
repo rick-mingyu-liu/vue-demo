@@ -47,11 +47,12 @@ onMounted(fetchPrices)
               class="d-flex"
             >
               <div class="container-avatar mx-auto">
-                <RouterLink :to="person.route">
+                <RouterLink :to="person.route" custom v-slot="{ navigate }">
                   <v-avatar
                     class="outlined-avatar mx-auto mb-4"
                     size="200"
                     :image="person.image"
+                    @click="navigate"
                     :alt="`${person.name}'s profile picture`"
                   />
                 </RouterLink>
@@ -147,7 +148,7 @@ li {
 .container-avatar {
   width: 90%;
   padding: 1rem;
-  background-color: #656565;
+  background-color: #ffffff;
   border-radius: 30px;
   transition:
     transform 0.3s ease,
@@ -179,6 +180,10 @@ li {
 .outlined-avatar {
   display: block;
   transition: transform 0.3s ease;
+}
+
+.outlined-avatar:hover {
+  cursor: pointer;
 }
 
 .outlined-avatar.thick {
@@ -221,11 +226,15 @@ li {
 
 .dark-theme .container-avatar {
   background-color: #1e1e1e;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .dark-theme .names {
   color: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 </style>

@@ -1,24 +1,30 @@
 <script setup lang="ts">
-  import { useThemeStore } from '@/stores/themeStore'
-  import { watch } from 'vue'
-  import { useTheme } from 'vuetify'
+import { useThemeStore } from '@/stores/themeStore'
+import { watch } from 'vue'
+import { useTheme } from 'vuetify'
 
-  const theme = useThemeStore()
-  const vuetifyTheme = useTheme()
+const theme = useThemeStore()
+const vuetifyTheme = useTheme()
 
-  // Watch for theme changes and apply to Vuetify
-  watch(() => theme.darkMode, (newVal) => {
+// Watch for theme changes and apply to Vuetify
+watch(
+  () => theme.darkMode,
+  (newVal) => {
     vuetifyTheme.global.name.value = newVal ? 'dark' : 'light'
-  }, { immediate: true })
+  },
+  { immediate: true },
+)
 </script>
 
-
-
 <template>
-  <v-app :class="{'dark-theme': theme.darkMode}">
+  <v-app :class="{ 'dark-theme': theme.darkMode }">
     <v-app-bar app :color="theme.darkMode ? 'grey-darken-4' : 'white'">
       <v-toolbar-title class="navbar-text text-h6">
-        <v-icon size="50" :color="theme.darkMode ? 'white' : 'black'" icon="mdi-ufo-outline"></v-icon>
+        <v-icon
+          size="50"
+          :color="theme.darkMode ? 'white' : 'black'"
+          icon="mdi-ufo-outline"
+        ></v-icon>
         Portal Co-op Team Summer 2025</v-toolbar-title
       >
 
@@ -28,31 +34,35 @@
         {{ theme.darkMode ? 'Dark' : 'Light' }} Mode
       </v-btn>
 
-      <v-btn to="/" variant="elevated" class="nav-btn ma-5" exact :ripple="false" :color="theme.darkMode ? 'grey-darken-3' : 'white'">
-        <span :class="{'text-white': theme.darkMode, 'text-black': !theme.darkMode}">Home</span>
+      <v-btn
+        to="/"
+        variant="elevated"
+        class="nav-btn ma-5"
+        exact
+        :ripple="false"
+        :color="theme.darkMode ? 'grey-darken-3' : 'white'"
+      >
+        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Home</span>
       </v-btn>
 
       <v-btn to="/isaac" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
-        <span :class="{'text-white': theme.darkMode, 'text-black': !theme.darkMode}">Issac</span>
+        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Isaac</span>
       </v-btn>
 
       <v-btn to="/raj" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
-        <span :class="{'text-white': theme.darkMode, 'text-black': !theme.darkMode}">Raj</span>
+        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Raj</span>
       </v-btn>
 
       <v-btn to="/rick" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
-        <span :class="{'text-white': theme.darkMode, 'text-black': !theme.darkMode}">Rick</span>
+        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Rick</span>
       </v-btn>
     </v-app-bar>
 
     <v-main class="mainpage align-center justify-center">
       <RouterView />
     </v-main>
-
   </v-app>
 </template>
-
-
 
 <style scoped>
 body {
