@@ -10,7 +10,7 @@ import { RouterLink } from 'vue-router'
     <div class="scroll-container">
       <main class="mainpage">
         <v-container class="pt-8 pb-4" fluid>
-          <h1 class="title text-h3 font-weight-bold text-center mb-6">Meet the Interns!</h1>
+          <h1 class="title text-h3 font-weight-bold text-center">Meet the Interns!</h1>
 
           <v-row class="justify-center mb-8">
             <v-col
@@ -44,7 +44,6 @@ import { RouterLink } from 'vue-router'
             <v-btn
               to="/apipage"
               size="x-large"
-              color="primary"
               prepend-icon="mdi-currency-btc"
               elevation="2"
               class="crypto-button"
@@ -117,6 +116,8 @@ import { RouterLink } from 'vue-router'
 
 .title {
   font-family: 'DM Sans', sans-serif;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .outlined-avatar {
@@ -137,6 +138,9 @@ import { RouterLink } from 'vue-router'
 }
 
 .crypto-button {
+  margin: 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
   transition: transform 0.3s ease;
 }
 

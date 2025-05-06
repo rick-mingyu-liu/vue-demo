@@ -26,10 +26,9 @@ onMounted(fetchPrices)
   <v-app>
     <v-main class="d-flex justify-center align-center crypto-page pa-4">
       <v-container>
-        <h1 class="text-h3 font-weight-bold text-center mb-6">Crypto Prices</h1>
-        
         <div class="crypto-prices pa-5 mb-6 mx-auto">
           <h2 class="mb-4">Live Crypto Price Tracker</h2>
+          <v-divider></v-divider>
           <ul class="mb-5">
             <li v-for="coin in coins" :key="coin" class="price-item">
               <a
@@ -38,20 +37,14 @@ onMounted(fetchPrices)
                 rel="noopener"
                 class="coin-link"
               >
-                <v-icon class="mr-2">mdi-currency-btc</v-icon>{{ coin }}
-              </a>: 
-              <span class="price-value">${{ prices[coin] || 'Loading...' }}</span> USD
+                {{ coin }}
+              </a>
+              :&nbsp;<span class="price-value">${{ prices[coin] || 'Loading...' }}</span> &nbsp;USD
             </li>
           </ul>
-          <v-btn 
-            @click="fetchPrices" 
-            color="primary" 
-            class="mb-2" 
-            :disabled="isLoading"
-            size="large"
-          >
+          <v-btn @click="fetchPrices" class="refresh-btn" :disabled="isLoading" size="large">
             <v-icon class="mr-2">mdi-refresh</v-icon>
-            {{ isLoading ? 'Refreshing...' : 'Refresh Prices' }}
+            {{ isLoading ? 'Refreshing...' : 'Refresh' }}
           </v-btn>
         </div>
       </v-container>
@@ -60,6 +53,12 @@ onMounted(fetchPrices)
 </template>
 
 <style scoped>
+.refresh-btn {
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
 .crypto-page {
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
@@ -67,13 +66,15 @@ onMounted(fetchPrices)
 
 .crypto-prices {
   background-color: white;
-  border-radius: 20px;
+  border-radius: 30px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
   will-change: transform;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .crypto-prices:hover {
@@ -82,11 +83,9 @@ onMounted(fetchPrices)
 }
 
 .price-item {
-  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
 }
 
 .price-value {
