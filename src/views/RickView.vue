@@ -1,40 +1,32 @@
 <template>
-  <div class="about">
-    <section class="intro">
-      <h1>Hi, I'm Rick <span class="wave">👋</span></h1>
-      <p>
-        I'm a second year Computational Mathematics student at the University of Waterloo. Growing
-        up, I was always fascinated by problem-solving. That passion gradually led me to the world
-        of programming. I've committed to learning deeply, working hard, and building cool projects.
-      </p>
-      <p>
-        With curiosity and determination, I believe we can build solutions that make a real impact.
-        I'm especially grateful for the chance to pursue an AI developer role, and I’m ready to give
-        my full effort to be part of that journey!🌈
-      </p>
+  <v-app>
+    <v-main class="about-hero-wrapper d-flex justify-center align-center pa-4">
+      <section class="intro">
+        <h1>Hi, I'm Rick <span class="wave">👋</span></h1>
+        <p>
+          I'm a second year Computational Mathematics student at the University of Waterloo. Growing
+          up, I was always fascinated by problem-solving. That passion gradually led me to the world
+          of programming. I've committed to learning deeply, working hard, and building cool projects.
+        </p>
+        <p>
+          With curiosity and determination, I believe we can build solutions that make a real impact.
+          I'm especially grateful for the chance to pursue an AI developer role, and I’m ready to give
+          my full effort to be part of that journey!🌈
+        </p>
 
-      <!-- Vuetify Button -->
-      <v-btn
-        color="primary"
-        variant="outlined"
-        href="https://rick-mingyu-liu.github.io/personal-web/"
-        target="_blank"
-        class="mt-4"
-      >
-        Personal Website
-      </v-btn>
-    </section>
-  </div>
+        <v-btn
+          variant="outlined"
+          href="https://rick-mingyu-liu.github.io/personal-web/"
+          target="_blank"
+          class="mt-4 custom-btn"
+        >
+          Personal Website
+        </v-btn>
+      </section>
+    </v-main>
+  </v-app>
 </template>
 <style scoped>
-.about {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  color: #333333;
-}
 
 .intro {
   padding: 2rem 3rem;
@@ -89,4 +81,39 @@ p {
   font-size: 1.2rem;
   line-height: 1.6;
 }
+
+
+.dark-theme .intro{
+  background-color: #323232;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-theme .intro:hover {
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.25);
+}
+
+.custom-btn {
+  color: #ffffff; /* Text color */
+  background-color: #1976d2; /* Button background color */
+  border: 1px solid #1976d2; /* Border color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #00050b; /* Darker shade on hover */
+  color: #e3f2fd; /* Lighter text color on hover */
+}
+
+.dark-theme .custom-btn {
+  background-color: #424242; /* Darker background for dark theme */
+  border: 1px solid #424242; /* Darker border for dark theme */
+}
+
+.dark-theme .custom-btn:hover {
+  background-color: #616161; /* Darker shade on hover for dark theme */
+  color: #ffffff; /* Lighter text color on hover for dark theme */
+}
+
 </style>

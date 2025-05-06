@@ -220,6 +220,14 @@ li {
   color: #ffffff;
 }
 
+.dark-theme .crypto-prices .coin-link {
+  color: #ffffff;
+}
+
+.dark-theme .crypto-prices .coin-link:hover {
+  color: #ffffff;
+}
+
 .dark-theme .mainpage {
   background-color: #121212;
 }
