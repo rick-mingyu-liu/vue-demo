@@ -47,11 +47,12 @@ watch(
       <div class="menu">
         <v-speed-dial location="bottom center" transition="fade-transition">
         <template v-slot:activator="{ props: activatorProps }">
-          <v-fab v-bind="activatorProps" size="large" icon="mdi-folder"></v-fab>
+          <v-fab v-bind="activatorProps" size="large" icon="mdi-tab"></v-fab>
         </template>
 
         <v-btn key="1" icon="mdi-cookie" href="/cookies"></v-btn>
         <v-btn key="2" icon="mdi-bitcoin" href="/apipage"></v-btn>
+        <v-btn key="3" icon="mdi-account-group" href="/team"></v-btn>
       </v-speed-dial>
       </div>
       <v-btn @click="theme.toggleTheme" class="theme-btn ml-4" variant="outlined" icon="mdi-theme-light-dark">

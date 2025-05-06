@@ -43,6 +43,11 @@ const router = createRouter({
       name: 'cookies',
       component: () => import('../views/CookieView.vue'),
     },
+    {
+      path: '/team',
+      name: 'team',
+      component: () => import('../views/TeamView.vue'),
+    }
   ],
 })
 
