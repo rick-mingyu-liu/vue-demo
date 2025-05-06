@@ -37,9 +37,10 @@ import overlay from '../assets/overlay.png'
 
           <v-row no-gutters>
             <v-col>
-              <div class="member-container">
-                <v-avatar class="mt-3 member" size="150" color="grey darken-3" :image="shinong"
-                  alt="Shinong's profile picture"></v-avatar>
+              <div class="member-container text-center">
+                <a href="https://github.com/shinong" target="_blank" rel="noopener noreferrer">
+                  <v-avatar class="mt-3 member" size="150" :image="shinong" />
+                </a>
                 <p>Shinong</p>
               </div>
             </v-col>
