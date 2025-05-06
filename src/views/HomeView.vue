@@ -39,18 +39,6 @@ import { RouterLink } from 'vue-router'
               </div>
             </v-col>
           </v-row>
-
-          <div class="text-center mb-8">
-            <v-btn
-              to="/apipage"
-              size="x-large"
-              prepend-icon="mdi-currency-btc"
-              elevation="2"
-              class="crypto-button"
-            >
-              Check Live Crypto Prices
-            </v-btn>
-          </div>
         </v-container>
       </main>
     </div>

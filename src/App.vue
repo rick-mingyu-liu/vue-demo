@@ -21,61 +21,40 @@ watch(
     <v-app-bar app :color="theme.darkMode ? 'grey-darken-4' : 'white'">
       <RouterLink to="/" custom v-slot="{ navigate }">
         <v-toolbar-title class="navbar-text" @click="navigate">
-          <v-icon
-            size="40"
-            :color="theme.darkMode ? 'white' : 'black'"
-            icon="mdi-ufo-outline"
-          ></v-icon>
+          <v-icon size="40" :color="theme.darkMode ? 'white' : 'black'" icon="mdi-ufo-outline"></v-icon>
           Portal Team
         </v-toolbar-title>
       </RouterLink>
 
       <v-spacer />
-      <v-btn
-        to="/apipage"
-        variant="elevated"
-        class="nav-btn text-black ma-5 mr-10"
-        exact
-        :ripple="false"
-      >
-        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">
-          <v-icon class="mr-1" size="small">mdi-currency-btc</v-icon>Crypto
-        </span>
-      </v-btn>
 
-      <v-btn
-        to="/cookies"
-        variant="elevated"
-        class="nav-btn text-black ma-5 mr-10"
-        exact
-        :ripple="false"
-      >
-        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">
-          Cookies
-        </span>
-      </v-btn>
 
-      <v-btn to="/isaac" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
+      <v-btn to="/isaac" variant="elevated" class="nav-btn text-black ma-2" exact :ripple="false">
         <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Isaac</span>
       </v-btn>
 
-      <v-btn to="/raj" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
+      <v-btn to="/raj" variant="elevated" class="nav-btn text-black ma-2" exact :ripple="false">
         <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Raj</span>
       </v-btn>
 
-      <v-btn to="/rick" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
+      <v-btn to="/rick" variant="elevated" class="nav-btn text-black ma-2 mr-7" exact :ripple="false">
         <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Rick</span>
       </v-btn>
     </v-app-bar>
 
     <v-main class="mainpage align-center justify-center">
       <RouterView />
-      <v-btn
-        @click="theme.toggleTheme"
-        class="theme-btn ml-4"
-        variant="outlined"
-        icon="mdi-theme-light-dark"
-      >
+      <div class="menu">
+        <v-speed-dial location="bottom center" transition="fade-transition">
+        <template v-slot:activator="{ props: activatorProps }">
+          <v-fab v-bind="activatorProps" size="large" icon="mdi-folder"></v-fab>
+        </template>
+
+        <v-btn key="1" icon="mdi-cookie" href="/cookies"></v-btn>
+        <v-btn key="2" icon="mdi-bitcoin" href="/apipage"></v-btn>
+      </v-speed-dial>
+      </div>
+      <v-btn @click="theme.toggleTheme" class="theme-btn ml-4" variant="outlined" icon="mdi-theme-light-dark">
       </v-btn>
     </v-main>
   </v-app>
@@ -84,6 +63,13 @@ watch(
 <style scoped>
 body {
   font-family: 'DM Sans', sans-serif;
+}
+
+.menu {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  z-index: 1000;
 }
 
 .theme-btn {
