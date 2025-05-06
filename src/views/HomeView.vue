@@ -116,11 +116,11 @@ onMounted(fetchPrices)
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  will-change: transform; 
+  will-change: transform;
 }
 
 .price-item {
-  height: 2.2rem; 
+  height: 2.2rem;
 }
 
 ul {
@@ -145,7 +145,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  will-change: transform; 
+  will-change: transform;
 }
 
 .container-avatar:hover {
@@ -188,5 +188,33 @@ li {
     max-width: 100%;
     height: auto;
   }
+}
+
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-theme .v-app-bar {
+  background-color: #1e1e1e !important;
+}
+
+.dark-theme .crypto-prices {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.dark-theme .mainpage {
+  background-color: #121212;
+}
+
+.dark-theme .container-avatar {
+  background-color: #1e1e1e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-theme .names {
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 </style>
