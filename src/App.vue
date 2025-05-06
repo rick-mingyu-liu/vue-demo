@@ -30,10 +30,6 @@ watch(
 
       <v-spacer />
 
-      <v-btn @click="theme.toggleTheme" class="ml-4" variant="outlined" color="primary">
-        {{ theme.darkMode ? 'Dark' : 'Light' }} Mode
-      </v-btn>
-
       <v-btn
         to="/"
         variant="elevated"
@@ -60,6 +56,13 @@ watch(
 
     <v-main class="mainpage align-center justify-center">
       <RouterView />
+      <v-btn
+        @click="theme.toggleTheme"
+        class="theme-btn ml-4"
+        variant="outlined"
+        icon="mdi-theme-light-dark"
+      >
+      </v-btn>
     </v-main>
   </v-app>
 </template>
@@ -67,6 +70,13 @@ watch(
 <style scoped>
 body {
   font-family: 'DM Sans', sans-serif;
+}
+
+.theme-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
 }
 
 .mainpage {
