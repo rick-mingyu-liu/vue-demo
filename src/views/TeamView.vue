@@ -3,29 +3,15 @@ import shinong from '../assets/shinong.jpg'
 import pavol from '../assets/pavol.jpg'
 import james from '../assets/james.jpg'
 import joe from '../assets/joe.jpg'
+import overlay from '../assets/overlay.png'
 </script>
 
 <template>
   <v-app>
     <v-main>
       <v-container class="main-container">
-        meet the team
-        <v-container class="bg-surface-variant">
-
-          <v-row no-gutters>
-            <v-col>
-              <div class="member-container">
-                <v-avatar
-                  class="mt-3 member"
-                  size="150"
-                  color="grey darken-3"
-                  :image="shinong"
-                  alt="Shinong's profile picture"
-                ></v-avatar>
-                <p>Shinong</p>
-              </div>
-            </v-col>
-          </v-row>
+        <p class="title">Meet the Team!</p>
+        <v-container class="background">
 
           <v-row no-gutters>
             <v-col>
@@ -64,6 +50,21 @@ import joe from '../assets/joe.jpg'
                   class="mt-3 member"
                   size="150"
                   color="grey darken-3"
+                  :image="shinong"
+                  alt="Shinong's profile picture"
+                ></v-avatar>
+                <p>Shinong</p>
+              </div>
+            </v-col>
+          </v-row>
+
+          <v-row no-gutters>
+            <v-col>
+              <div class="member-container">
+                <v-avatar
+                  class="mt-3 member"
+                  size="150"
+                  color="grey darken-3"
                   :image="james"
                   alt="James's profile picture"
                 ></v-avatar>
@@ -79,6 +80,21 @@ import joe from '../assets/joe.jpg'
 </template>
 
 <style scoped>
+  main {
+    background-image: url(../assets/overlay.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
   .main-container {
     display: flex;
     flex-direction: column;
@@ -86,21 +102,25 @@ import joe from '../assets/joe.jpg'
     align-items: center;
     font-family: 'DM Sans', sans-serif;
     font-size: 2rem;
-    width: 50%;
+    width: fit-content;
+    margin-bottom: 2rem;
   }
 
-  .bg-surface-variant {
+  .background {
+    background-color: rgba(255, 255, 255, 0.01);
     padding: 2rem;
     border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 1200px;
   }
 
   .member {
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
   }
 
   .member:hover {
