@@ -5,7 +5,7 @@ import { ref } from 'vue'
 const showDialog = ref(false)
 const form = ref({ name: '', email: '', message: '' })
 
-function submitForm() {
+function submitForm(e: Event) {
   const { name, email, message } = form.value
   if (!name || !email || !message) {
     alert('Please fill in all fields.')
@@ -18,7 +18,8 @@ function submitForm() {
   }
 
   console.log('Form submitted:', form.value)
-
+  const formEl = e.target as HTMLFormElement
+  formEl.submit()
   form.value = { name: '', email: '', message: '' }
   showDialog.value = false
 }
@@ -39,16 +40,19 @@ function submitForm() {
                 <h1 class="profile-name">Hey, I'm Raj!</h1>
                 <div class="profile-title">
                   AI Developer
-                  <v-chip color="deep-purple" size="small" class="ml-2">University of Waterloo</v-chip>
+                  <v-chip color="deep-purple" size="small" class="ml-2"
+                    >University of Waterloo</v-chip
+                  >
                 </div>
               </div>
             </div>
             <!-- self intro -->
             <v-card-text class="profile-bio">
               I’ve always been curious about how things work, especially when it comes to tech. In
-              school, I was the kid who asked way too many questions in math class. That curiosity led
-              me to coding, and by the time I hit my teens, I was building small apps and exploring AI.
-              Now, I’m all about creating software that solves real problems and helps others!
+              school, I was the kid who asked way too many questions in math class. That curiosity
+              led me to coding, and by the time I hit my teens, I was building small apps and
+              exploring AI. Now, I’m all about creating software that solves real problems and helps
+              others!
             </v-card-text>
 
             <v-divider class="divider"></v-divider>
@@ -60,8 +64,12 @@ function submitForm() {
                 <v-chip class="ma-1 skill-chip" color="indigo accent-3" text-color="white"
                   >Python</v-chip
                 >
-                <v-chip class="ma-1 skill-chip" color="purple accent-3" text-color="white">Java</v-chip>
-                <v-chip class="ma-1 skill-chip" color="blue darken-2" text-color="white">C++</v-chip>
+                <v-chip class="ma-1 skill-chip" color="purple accent-3" text-color="white"
+                  >Java</v-chip
+                >
+                <v-chip class="ma-1 skill-chip" color="blue darken-2" text-color="white"
+                  >C++</v-chip
+                >
                 <v-chip class="ma-1 skill-chip" color="green accent" text-color="white">C</v-chip>
                 <v-chip class="ma-1 skill-chip" color="blue-grey darken-2" text-color="white"
                   >C#</v-chip
@@ -75,14 +83,15 @@ function submitForm() {
                 <v-chip class="ma-1 skill-chip" color="purple accent-4" text-color="white"
                   >React</v-chip
                 >
-                <v-chip class="ma-1 skill-chip" color="orange darken-3" text-color="white">Vue</v-chip>
+                <v-chip class="ma-1 skill-chip" color="orange darken-3" text-color="white"
+                  >Vue</v-chip
+                >
               </div>
             </div>
 
             <v-divider class="divider"></v-divider>
 
             <v-card-actions class="profile-actions">
-
               <v-badge content="New" offset-x="10" offset-y="10" color="red" overlap>
                 <template #badge>
                   <v-icon small>mdi-message-text</v-icon>
@@ -154,10 +163,36 @@ function submitForm() {
             </v-toolbar>
 
             <v-card-text class="pt-6">
-              <v-form ref="contactForm" class="contact-form" action="https://formspree.io/f/mblooeoo" method="POST">
-                <input type="text" name="name" v-model="form.name" required placeholder="Name" class="native-input" />
-                <input type="email" name="_replyto" v-model="form.email" required placeholder="Email" class="native-input" />
-                <textarea name="message" v-model="form.message" required placeholder="Your message" class="native-input"></textarea>
+              <v-form
+                ref="contactForm"
+                class="contact-form"
+                @submit.prevent="submitForm"
+                method="POST"
+                action="https://formspree.io/f/mblooeoo"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  v-model="form.name"
+                  required
+                  placeholder="Name"
+                  class="native-input"
+                />
+                <input
+                  type="email"
+                  name="_replyto"
+                  v-model="form.email"
+                  required
+                  placeholder="Email"
+                  class="native-input"
+                />
+                <textarea
+                  name="message"
+                  v-model="form.message"
+                  required
+                  placeholder="Your message"
+                  class="native-input"
+                ></textarea>
 
                 <input type="hidden" name="_subject" value="New message from your site!" />
 
@@ -170,7 +205,6 @@ function submitForm() {
                 </v-card-actions>
               </v-form>
             </v-card-text>
-
           </v-card>
         </v-dialog>
       </v-container>
