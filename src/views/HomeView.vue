@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
 import { ref, onMounted } from 'vue'
 
 const coins = ['BTC', 'ETH', 'DOGE']
-const prices = ref({})
+const prices = ref<Record<string, string | number>>({})
 const isLoading = ref(true)
 
 const fetchPrices = async () => {
@@ -16,7 +16,7 @@ const fetchPrices = async () => {
       const res = await fetch(`https://api.coinbase.com/v2/prices/${coin}-USD/spot`)
       const data = await res.json()
       prices.value[coin] = parseFloat(data.data.amount).toFixed(2)
-    } catch (error) {
+    } catch {
       prices.value[coin] = 'Error'
     }
   }
@@ -61,13 +61,20 @@ onMounted(fetchPrices)
           </v-row>
 
           <div class="crypto-prices pa-4 mb-6 mx-auto" style="max-width: 600px">
-            <h2 class="mb-4">📈 Live Crypto Prices</h2>
+            <h2 class="mb-4">Live Crypto Prices</h2>
             <ul class="mb-4">
               <li v-for="coin in coins" :key="coin" class="price-item">
-                {{ coin }}: {{ prices[coin] || 'Loading...' }} USD
+                <a
+                  :href="`https://www.coinbase.com/price/${coin.toLowerCase()}`"
+                  target="_blank"
+                  rel="noopener"
+                  class="coin-link"
+                >
+                  {{ coin }} </a
+                >: ${{ prices[coin] || 'Loading...' }} USD
               </li>
             </ul>
-            <v-btn @click="fetchPrices" color="primary" class="mb-2" :disabled="isLoading">
+            <v-btn @click="fetchPrices" color="white" class="mb-2" :disabled="isLoading">
               {{ isLoading ? 'Refreshing...' : 'Refresh' }}
             </v-btn>
           </div>
@@ -78,6 +85,15 @@ onMounted(fetchPrices)
 </template>
 
 <style scoped>
+.coin-link {
+  color: #000000; /* your desired font color */
+  text-decoration: none; /* optional: remove underline */
+}
+
+.coin-link:hover {
+  color: #333333; /* slightly lighter on hover */
+}
+
 .page-wrapper {
   position: relative;
   width: 100%;
@@ -106,21 +122,16 @@ onMounted(fetchPrices)
   position: relative;
 }
 
-.v-container {
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
-}
-
 .crypto-prices {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 30px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  will-change: transform; 
+  will-change: transform;
 }
 
 .price-item {
-  height: 2.2rem; 
+  height: 2.2rem;
 }
 
 ul {
@@ -134,9 +145,9 @@ li {
 }
 
 .container-avatar {
-  width: 100%;
-  padding: 1.5rem;
-  background-color: #ffffff;
+  width: 90%;
+  padding: 1rem;
+  background-color: #656565;
   border-radius: 30px;
   transition:
     transform 0.3s ease,
@@ -145,7 +156,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  will-change: transform; 
+  will-change: transform;
 }
 
 .container-avatar:hover {
