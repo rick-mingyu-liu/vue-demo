@@ -58,12 +58,34 @@ watch(
       <v-btn @click="theme.toggleTheme" class="theme-btn ml-4" variant="outlined" icon="mdi-theme-light-dark">
       </v-btn>
     </v-main>
+    <v-footer class="myfooter d-flex align-center justify-center ga-2 flex-wrap flex-grow-1 py-3">
+    <v-btn
+      v-for="link in links"
+      :key="link"
+      :text="link"
+      variant="text"
+      rounded
+    ></v-btn>
+
+    <div class="flex-1-0-100 text-center mt-2">
+      {{ new Date().getFullYear() }} — Isaac Jiang, Rick Liu, Raj Shah
+    </div>
+  </v-footer>
   </v-app>
 </template>
 
 <style scoped>
 body {
   font-family: 'DM Sans', sans-serif;
+}
+
+.myfooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu {
@@ -75,7 +97,7 @@ body {
 
 .theme-btn {
   position: fixed;
-  bottom: 30px;
+  bottom: 80px;
   right: 30px;
   z-index: 1000;
 }

@@ -87,7 +87,7 @@ main {
   font-family: 'DM Sans', sans-serif;
   font-size: 2rem;
   width: fit-content;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .main-container {

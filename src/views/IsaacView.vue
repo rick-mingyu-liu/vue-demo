@@ -83,6 +83,7 @@ import avatar from '../assets/isaac.jpg'
   border-radius: 50px;
   max-width: 500px;
   margin: 2rem; /* give it some breathing room */
+  margin-bottom: 5rem;
 }
 
 .dark-theme .intro-text {

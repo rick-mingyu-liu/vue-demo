@@ -199,6 +199,7 @@ function submitForm() {
   min-height: 100vh;
   display: flex;
   padding: 2rem 1rem;
+  margin-bottom: 5rem;
 }
 
 .content-wrapper {
