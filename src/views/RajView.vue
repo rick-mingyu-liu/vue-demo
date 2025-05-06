@@ -6,6 +6,17 @@ const showDialog = ref(false)
 const form = ref({ name: '', email: '', message: '' })
 
 function submitForm() {
+  const { name, email, message } = form.value
+  if (!name || !email || !message) {
+    alert('Please fill in all fields.')
+    return
+  }
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailPattern.test(email)) {
+    alert('Please enter a valid email address.')
+    return
+  }
+
   console.log('Form submitted:', form.value)
   showDialog.value = false
 }
@@ -146,7 +157,7 @@ function submitForm() {
                   v-model="form.name"
                   label="Name"
                   prepend-inner-icon="mdi-account"
-                  required
+                  required="true"
                   variant="outlined"
                 ></v-text-field>
                 <v-text-field
