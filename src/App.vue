@@ -19,26 +19,28 @@ watch(
 <template>
   <v-app :class="{ 'dark-theme': theme.darkMode }">
     <v-app-bar app :color="theme.darkMode ? 'grey-darken-4' : 'white'">
-      <v-toolbar-title class="navbar-text text-h6">
-        <v-icon
-          size="50"
-          :color="theme.darkMode ? 'white' : 'black'"
-          icon="mdi-ufo-outline"
-        ></v-icon>
-        Portal Co-op Team Summer 2025</v-toolbar-title
-      >
+      <RouterLink to="/" custom v-slot="{ navigate }">
+        <v-toolbar-title class="navbar-text" @click="navigate">
+          <v-icon
+            size="50"
+            :color="theme.darkMode ? 'white' : 'black'"
+            icon="mdi-ufo-outline"
+          ></v-icon>
+          Portal Co-op Team Summer 2025
+        </v-toolbar-title>
+      </RouterLink>
 
       <v-spacer />
-
       <v-btn
-        to="/"
+        to="/apipage"
         variant="elevated"
-        class="nav-btn ma-5"
+        class="nav-btn text-black ma-5 mr-10"
         exact
         :ripple="false"
-        :color="theme.darkMode ? 'grey-darken-3' : 'white'"
       >
-        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Home</span>
+        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">
+          <v-icon class="mr-1" size="small">mdi-currency-btc</v-icon>Crypto
+        </span>
       </v-btn>
 
       <v-btn to="/isaac" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
@@ -51,12 +53,6 @@ watch(
 
       <v-btn to="/rick" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
         <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Rick</span>
-      </v-btn>
-
-      <v-btn to="/apipage" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
-        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">
-          <v-icon class="mr-1" size="small">mdi-currency-btc</v-icon>Crypto
-        </span>
       </v-btn>
     </v-app-bar>
 
@@ -104,6 +100,15 @@ header {
 .navbar-text {
   font-family: 'DM Sans', sans-serif;
   font-weight: bold;
+  color: #000;
+}
+
+.navbar-text:hover {
+  cursor: pointer;
+}
+
+.dark-theme .navbar-text {
+  color: #ffffff;
 }
 
 .nav-btn {
