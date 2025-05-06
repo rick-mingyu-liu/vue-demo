@@ -18,6 +18,7 @@ function submitForm() {
   }
 
   console.log('Form submitted:', form.value)
+
   form.value = { name: '', email: '', message: '' }
   showDialog.value = false
 }
@@ -84,7 +85,7 @@ function submitForm() {
 
               <v-badge content="New" offset-x="10" offset-y="10" color="red" overlap>
                 <template #badge>
-                  <v-icon small>mdi-star</v-icon>
+                  <v-icon small>mdi-message-text</v-icon>
                 </template>
                 <!-- contact section -->
                 <v-btn
@@ -153,40 +154,23 @@ function submitForm() {
             </v-toolbar>
 
             <v-card-text class="pt-6">
-              <v-form ref="contactForm" class="contact-form">
-                <v-text-field
-                  v-model="form.name"
-                  label="Name"
-                  prepend-inner-icon="mdi-account"
-                  required
-                  variant="outlined"
-                ></v-text-field>
-                <v-text-field
-                  v-model="form.email"
-                  label="Email"
-                  prepend-inner-icon="mdi-email"
-                  type="email"
-                  required
-                  variant="outlined"
-                ></v-text-field>
-                <v-textarea
-                  v-model="form.message"
-                  label="Message"
-                  prepend-inner-icon="mdi-message-text"
-                  rows="4"
-                  required
-                  variant="outlined"
-                ></v-textarea>
+              <v-form ref="contactForm" class="contact-form" action="https://formspree.io/f/mblooeoo" method="POST">
+                <input type="text" name="name" v-model="form.name" required placeholder="Name" class="native-input" />
+                <input type="email" name="_replyto" v-model="form.email" required placeholder="Email" class="native-input" />
+                <textarea name="message" v-model="form.message" required placeholder="Your message" class="native-input"></textarea>
+
+                <input type="hidden" name="_subject" value="New message from your site!" />
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn variant="text" @click="showDialog = false">Cancel</v-btn>
+                  <v-btn type="submit" color="deep-purple accent-4">
+                    <v-icon start>mdi-send</v-icon> Send
+                  </v-btn>
+                </v-card-actions>
               </v-form>
             </v-card-text>
 
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn variant="text" @click="showDialog = false">Cancel</v-btn>
-              <v-btn color="deep-purple accent-4" dark @click="submitForm">
-                <v-icon start>mdi-send</v-icon> Send
-              </v-btn>
-            </v-card-actions>
           </v-card>
         </v-dialog>
       </v-container>
@@ -307,6 +291,15 @@ function submitForm() {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.native-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
 @media (max-width: 600px) {
