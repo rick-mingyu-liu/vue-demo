@@ -50,9 +50,9 @@ watch(
           <v-fab v-bind="activatorProps" size="large" icon="mdi-tab"></v-fab>
         </template>
 
-        <v-btn key="1" icon="mdi-cookie" href="/cookies"></v-btn>
-        <v-btn key="2" icon="mdi-bitcoin" href="/apipage"></v-btn>
-        <v-btn key="3" icon="mdi-account-group" href="/team"></v-btn>
+        <v-btn key="1" icon="mdi-cookie" to="/cookies"></v-btn>
+        <v-btn key="2" icon="mdi-bitcoin" to="/apipage"></v-btn>
+        <v-btn key="3" icon="mdi-account-group" to="/team"></v-btn>
       </v-speed-dial>
       </div>
       <v-btn @click="theme.toggleTheme" class="theme-btn ml-4" variant="outlined" icon="mdi-theme-light-dark">
