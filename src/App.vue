@@ -22,7 +22,7 @@ watch(
       <RouterLink to="/" custom v-slot="{ navigate }">
         <v-toolbar-title class="navbar-text" @click="navigate">
           <v-icon
-            size="50"
+            size="40"
             :color="theme.darkMode ? 'white' : 'black'"
             icon="mdi-ufo-outline"
           ></v-icon>
@@ -99,6 +99,7 @@ header {
 
 .navbar-text {
   font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #000;
 }
