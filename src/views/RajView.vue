@@ -49,6 +49,10 @@ function submitForm() {
                 >
                 <v-chip class="ma-1 skill-chip" color="purple accent-3" text-color="white">Java</v-chip>
                 <v-chip class="ma-1 skill-chip" color="blue darken-2" text-color="white">C++</v-chip>
+                <v-chip class="ma-1 skill-chip" color="green accent" text-color="white">C</v-chip>
+                <v-chip class="ma-1 skill-chip" color="blue-grey darken-2" text-color="white"
+                  >C#</v-chip
+                >
                 <v-chip class="ma-1 skill-chip" color="green darken-2" text-color="white"
                   >JavaScript</v-chip
                 >
