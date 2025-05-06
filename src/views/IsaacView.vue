@@ -4,38 +4,46 @@ import avatar from '../assets/isaac.jpg'
 
 <template>
   <v-app>
-    <v-main class="about-hero-wrapper d-flex justify-center align-center pa-4">
-      <v-card title="About Isaac" class="about-hero text-white text-center">
+    <v-main class="about-hero-wrapper d-flex justify-center align-center">
+      <v-card title="Introduction" class="about-hero text-center">
         <v-avatar
           class="mx-auto mt-3"
-          size="100"
+          size="150"
           color="grey darken-3"
           :image="avatar"
           alt="Isaac's profile picture"
         ></v-avatar>
-        <v-card-text class="text-white">
+        <v-card-text class="intro-text">
           <h1>Hi, I'm Isaac!</h1>
+          <br />
           <p>
-            I'm a co-op student at the University of Waterloo, currently working with Vue and
-            TypeScript.
+            I'm a Computer Science student at the University of Waterloo, currently working with Vue
+            and TypeScript. Feel free to check out my projects and connect with me on LinkedIn!
           </p>
         </v-card-text>
+
         <v-card-actions class="justify-center">
           <v-btn
-            class="ma-2"
+            class="website-btn ma-2"
             prepend-icon="mdi-web"
             variant="elevated"
             href="https://isaacjiang.ca"
             target="_blank"
-            color="grey-darken-3"
           >
             Website</v-btn
           >
         </v-card-actions>
 
+        <v-divider class="my-4"></v-divider>
+
         <v-card-text class="text-white">
-          <h2>Projects</h2>
-          <v-card class="my-5" max-width="400">
+          <h2 class="project-heading">Projects</h2>
+          <v-card
+            class="project my-5"
+            max-width="500"
+            href="https://dorahacks.io/buidl/21598"
+            target="_blank"
+          >
             <v-card-title>The Bigger Picture.</v-card-title>
             <v-card-text>
               <p>
@@ -44,7 +52,12 @@ import avatar from '../assets/isaac.jpg'
               </p>
             </v-card-text>
           </v-card>
-          <v-card class="my-5" max-width="400">
+          <v-card
+            class="project my-5"
+            max-width="500"
+            href="https://devpost.com/software/focuslock-d7iajx"
+            target="_blank"
+          >
             <v-card-title>StudyLock</v-card-title>
             <v-card-text>
               <p>
@@ -61,27 +74,56 @@ import avatar from '../assets/isaac.jpg'
 </template>
 
 <style scoped>
-.speed-dial-wrapper {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.dark-theme .about-hero {
+  background: #1e1e1e;
 }
 
 .about-hero {
-  background: #272727;
-  border-radius: 20px;
-  max-width: 400px;
-}
-
-.about-hero-wrapper {
-  /* ensure it’s at least the full viewport, but can grow bigger */
-  min-height: 100vh;
-  overflow-y: auto; /* let it scroll when content overflows */
-}
-.about-hero {
-  background: #272727;
-  border-radius: 20px;
-  max-width: 400px;
+  background: #ffffff;
+  border-radius: 50px;
+  max-width: 500px;
   margin: 2rem; /* give it some breathing room */
+}
+
+.dark-theme .intro-text {
+  color: #ffffff;
+}
+
+.website-btn {
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+.intro-text {
+  color: #000000;
+}
+
+.dark-theme .project-heading {
+  color: #ffffff;
+}
+
+.project-heading {
+  color: #000;
+}
+
+.project {
+  border-radius: 30px;
+  padding: 0.5rem;
+  background-color: rgb(250, 250, 250);
+}
+
+.dark-theme .project {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background-color: rgb(26, 26, 26);
+}
+
+.project:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
+}
+
+.dark-theme .project:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(14, 14, 14);
 }
 </style>
