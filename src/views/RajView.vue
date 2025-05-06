@@ -1,3 +1,16 @@
+<script setup lang="ts">
+// functions for contact section
+import { ref } from 'vue'
+
+const showDialog = ref(false)
+const form = ref({ name: '', email: '', message: '' })
+
+function submitForm() {
+  console.log('Form submitted:', form.value)
+  showDialog.value = false
+}
+</script>
+
 <template>
   <v-app>
     <v-main>
@@ -17,7 +30,7 @@
                 </div>
               </div>
             </div>
-
+            <!-- self intro -->
             <v-card-text class="profile-bio">
               I’ve always been curious about how things work, especially when it comes to tech. In
               school, I was the kid who asked way too many questions in math class. That curiosity led
@@ -52,11 +65,12 @@
             <v-divider class="divider"></v-divider>
 
             <v-card-actions class="profile-actions">
+
               <v-badge content="New" offset-x="10" offset-y="10" color="red" overlap>
                 <template #badge>
                   <v-icon small>mdi-star</v-icon>
                 </template>
-
+                <!-- contact section -->
                 <v-btn
                   color="black accent-4"
                   dark
@@ -67,6 +81,7 @@
                   <v-icon start>mdi-email-outline</v-icon> Contact Me‎ ‎ ‎ ‎ ‎
                 </v-btn>
               </v-badge>
+              <!-- personal web link -->
               <v-btn
                 color="deep-purple accent-4"
                 dark
@@ -77,6 +92,7 @@
               >
                 <v-icon start>mdi-account</v-icon> Website
               </v-btn>
+              <!-- github link -->
               <v-btn
                 color="blue accent-4"
                 dark
@@ -162,18 +178,6 @@
   </v-app>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const showDialog = ref(false)
-const form = ref({ name: '', email: '', message: '' })
-
-function submitForm() {
-  console.log('Form submitted:', form.value)
-  showDialog.value = false
-}
-</script>
-
 <style scoped>
 .about-container {
   min-height: 100vh;
@@ -246,7 +250,6 @@ function submitForm() {
   margin: 0.5rem 0;
 }
 
-
 .skills-title {
   font-size: 1.3rem;
   font-weight: 600;
@@ -311,20 +314,19 @@ function submitForm() {
   }
 }
 
-.dark-theme .profile-name {
-  color: #ffffff;
-}
+/* dark theme */
+.dark-theme {
+  .profile-name,
+  .skills-title {
+    color: #ffffff;
+  }
 
-.dark-theme .profile-title {
-  color: #e0e0e0;
-}
+  .profile-title {
+    color: #e0e0e0;
+  }
 
-.dark-theme .profile-bio {
-  color: #b0bec5;
+  .profile-bio {
+    color: #b0bec5;
+  }
 }
-
-.dark-theme .skills-title {
-  color: #ffffff;
-}
-
 </style>
