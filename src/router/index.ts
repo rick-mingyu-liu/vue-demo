@@ -38,6 +38,11 @@ const router = createRouter({
       name: 'apipage',
       component: () => import('../views/APIView.vue'),
     },
+    {
+      path: '/cookies',
+      name: 'cookies',
+      component: () => import('../views/CookieView.vue'),
+    },
   ],
 })
 

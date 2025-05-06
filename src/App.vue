@@ -43,6 +43,18 @@ watch(
         </span>
       </v-btn>
 
+      <v-btn
+        to="/cookies"
+        variant="elevated"
+        class="nav-btn text-black ma-5 mr-10"
+        exact
+        :ripple="false"
+      >
+        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">
+          Cookies
+        </span>
+      </v-btn>
+
       <v-btn to="/isaac" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
         <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Isaac</span>
       </v-btn>
@@ -100,7 +112,6 @@ header {
 .navbar-text {
   font-family: 'DM Sans', sans-serif;
   font-size: 1.5rem;
-  font-weight: bold;
   color: #000;
 }
 
