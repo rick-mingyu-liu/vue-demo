@@ -42,7 +42,7 @@ import { RouterLink } from 'vue-router'
 
           <div class="text-center mb-8">
             <v-btn
-              to="/crypto"
+              to="/apipage"
               size="x-large"
               color="primary"
               prepend-icon="mdi-currency-btc"
