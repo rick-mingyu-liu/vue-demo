@@ -1,19 +1,32 @@
+<script setup lang="ts">
+import avatar from '../assets/rick.jpg'
+</script>
+
 <template>
   <v-app>
     <v-main class="about-hero-wrapper d-flex justify-center align-center pa-4">
       <v-card class="intro">
+        <v-avatar
+          class="mx-auto mt-3"
+          size="150"
+          color="grey darken-3"
+          :image="avatar"
+          alt="Rick's profile picture"
+        >
+      </v-avatar>
         <h1>Hi, I'm Rick <span class="wave">👋</span></h1>
         <p>
-          I'm a second year Computational Mathematics student at the University of Waterloo. Growing
-          up, I was always fascinated by problem-solving. That passion gradually led me to the world
-          of programming. I've committed to learning deeply, working hard, and building cool projects.
+          I'm a second year Computational Mathematics student at the University of Waterloo.
+          I've committed to learning deeply, working hard, and building cool projects! 💻
         </p>
         <p>
-          With curiosity and determination, I believe we can build solutions that make a real impact.
-          I'm especially grateful for the chance to pursue an AI developer role, and I’m ready to give
-          my full effort to be part of that journey!🌈
+          With curiosity and determination, I believe we can create applications that make a real impact.
+          I'm especially grateful for the opportunity to pursue an AI developer role, and I'm ready to
+          give my full effort to be part of that journey! 🌈
         </p>
-
+        <p>
+          Feel free to check out my website and get in touch! 🤝
+        </p>
         <v-btn
           variant="outlined"
           href="https://rick-mingyu-liu.github.io/personal-web/"
