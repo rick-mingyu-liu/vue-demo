@@ -18,6 +18,7 @@ function submitForm() {
   }
 
   console.log('Form submitted:', form.value)
+  form.value = { name: '', email: '', message: '' }
   showDialog.value = false
 }
 </script>
@@ -157,7 +158,7 @@ function submitForm() {
                   v-model="form.name"
                   label="Name"
                   prepend-inner-icon="mdi-account"
-                  required="true"
+                  required
                   variant="outlined"
                 ></v-text-field>
                 <v-text-field
