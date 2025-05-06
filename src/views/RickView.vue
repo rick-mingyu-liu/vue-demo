@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main class="about-hero-wrapper d-flex justify-center align-center pa-4">
-      <section class="intro">
+      <v-card class="intro">
         <h1>Hi, I'm Rick <span class="wave">👋</span></h1>
         <p>
           I'm a second year Computational Mathematics student at the University of Waterloo. Growing
@@ -22,25 +22,13 @@
         >
           Personal Website
         </v-btn>
-      </section>
+      </v-card>
     </v-main>
   </v-app>
 </template>
+
 <style scoped>
-
-.intro {
-  padding: 2rem 3rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  max-width: 700px;
-  text-align: center;
-  transition: box-shadow 0.3s ease;
-}
-
-.intro:hover {
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-}
-
+/* animation for waving hand */
 @keyframes wave-animation {
   0% {
     transform: rotate(0deg);
@@ -71,9 +59,11 @@
   animation: wave-animation 1.5s ease-in-out 1;
 }
 
+/* font setting */
 h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  font-weight: semi-bold;
   color: rgb(27, 252, 91);
 }
 
@@ -82,7 +72,33 @@ p {
   line-height: 1.6;
 }
 
+/* light theme */
+.intro {
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
 
+.intro:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.custom-btn {
+  color: #ffffff;
+  background-color: #1976d2;
+  border: 1px solid #1976d2;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #00050b;
+  color: #e3f2fd;
+}
+
+/* dark theme  */
 .dark-theme .intro{
   background-color: #323232;
   color: #ffffff;
@@ -94,26 +110,13 @@ p {
   box-shadow: 0 12px 35px rgba(255, 255, 255, 0.25);
 }
 
-.custom-btn {
-  color: #ffffff; /* Text color */
-  background-color: #1976d2; /* Button background color */
-  border: 1px solid #1976d2; /* Border color */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.custom-btn:hover {
-  background-color: #00050b; /* Darker shade on hover */
-  color: #e3f2fd; /* Lighter text color on hover */
-}
-
 .dark-theme .custom-btn {
-  background-color: #424242; /* Darker background for dark theme */
-  border: 1px solid #424242; /* Darker border for dark theme */
+  background-color: #424242;
+  border: 1px solid #424242;
 }
 
 .dark-theme .custom-btn:hover {
-  background-color: #616161; /* Darker shade on hover for dark theme */
-  color: #ffffff; /* Lighter text color on hover for dark theme */
+  background-color: #616161;
+  color: #ffffff;
 }
-
 </style>
