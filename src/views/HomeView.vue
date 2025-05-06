@@ -200,4 +200,32 @@ li {
     height: auto;
   }
 }
+
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-theme .v-app-bar {
+  background-color: #1e1e1e !important;
+}
+
+.dark-theme .crypto-prices {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.dark-theme .mainpage {
+  background-color: #121212;
+}
+
+.dark-theme .container-avatar {
+  background-color: #1e1e1e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-theme .names {
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 </style>

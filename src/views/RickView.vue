@@ -1,16 +1,20 @@
 <template>
   <div class="about">
     <section class="intro">
-      <h1>Hi, I'm Rick <span class="wave">👋</span></h1>
+      <h1>
+        Hi, I'm Rick <span class="wave">👋</span>
+      </h1>
       <p>
-        I'm a second year Computational Mathematics student at the University of Waterloo. Growing
-        up, I was always fascinated by problem-solving. That passion gradually led me to the world
-        of programming. I've committed to learning deeply, working hard, and building cool projects.
+        I'm a second year Computational Mathematics student at the University of Waterloo.
+        Growing up, I was always fascinated by problem-solving.
+        That passion gradually led me to the world of programming.
+        I've committed to learning deeply, working hard, and
+        building cool projects.
       </p>
       <p>
-        With curiosity and determination, I believe we can build solutions that make a real impact.
-        I'm especially grateful for the chance to pursue an AI developer role, and I’m ready to give
-        my full effort to be part of that journey!🌈
+        With curiosity and determination, I believe we can build solutions that make
+        a real impact. I'm especially grateful for the chance to pursue an AI developer role, and I’m
+        ready to give my full effort to be part of that journey!🌈
       </p>
 
       <!-- Vuetify Button -->
@@ -26,7 +30,6 @@
     </section>
   </div>
 </template>
-
 <style scoped>
 .about {
   min-height: 100vh;
@@ -53,27 +56,13 @@
 }
 
 @keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  15% {
-    transform: rotate(14deg);
-  }
-  30% {
-    transform: rotate(-8deg);
-  }
-  45% {
-    transform: rotate(14deg);
-  }
-  60% {
-    transform: rotate(-4deg);
-  }
-  75% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .wave {
