@@ -52,6 +52,12 @@ watch(
       <v-btn to="/rick" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
         <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">Rick</span>
       </v-btn>
+
+      <v-btn to="/apipage" variant="elevated" class="nav-btn text-black ma-5" exact :ripple="false">
+        <span :class="{ 'text-white': theme.darkMode, 'text-black': !theme.darkMode }">
+          <v-icon class="mr-1" size="small">mdi-currency-btc</v-icon>Crypto
+        </span>
+      </v-btn>
     </v-app-bar>
 
     <v-main class="mainpage align-center justify-center">

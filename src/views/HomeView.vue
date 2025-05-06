@@ -3,27 +3,6 @@ import isaac from '../assets/isaac.jpg'
 import raj from '../assets/raj.jpg'
 import rick from '../assets/rick.jpg'
 import { RouterLink } from 'vue-router'
-import { ref, onMounted } from 'vue'
-
-const coins = ['BTC', 'ETH', 'DOGE']
-const prices = ref<Record<string, string | number>>({})
-const isLoading = ref(true)
-
-const fetchPrices = async () => {
-  isLoading.value = true
-  for (const coin of coins) {
-    try {
-      const res = await fetch(`https://api.coinbase.com/v2/prices/${coin}-USD/spot`)
-      const data = await res.json()
-      prices.value[coin] = parseFloat(data.data.amount).toFixed(2)
-    } catch {
-      prices.value[coin] = 'Error'
-    }
-  }
-  isLoading.value = false
-}
-
-onMounted(fetchPrices)
 </script>
 
 <template>
@@ -61,22 +40,16 @@ onMounted(fetchPrices)
             </v-col>
           </v-row>
 
-          <div class="crypto-prices pa-4 mb-6 mx-auto" style="max-width: 600px">
-            <h2 class="mb-4">Live Crypto Prices</h2>
-            <ul class="mb-4">
-              <li v-for="coin in coins" :key="coin" class="price-item">
-                <a
-                  :href="`https://www.coinbase.com/price/${coin.toLowerCase()}`"
-                  target="_blank"
-                  rel="noopener"
-                  class="coin-link"
-                >
-                  {{ coin }} </a
-                >: ${{ prices[coin] || 'Loading...' }} USD
-              </li>
-            </ul>
-            <v-btn @click="fetchPrices" color="white" class="mb-2" :disabled="isLoading">
-              {{ isLoading ? 'Refreshing...' : 'Refresh' }}
+          <div class="text-center mb-8">
+            <v-btn
+              to="/crypto"
+              size="x-large"
+              color="primary"
+              prepend-icon="mdi-currency-btc"
+              elevation="2"
+              class="crypto-button"
+            >
+              Check Live Crypto Prices
             </v-btn>
           </div>
         </v-container>
@@ -86,15 +59,6 @@ onMounted(fetchPrices)
 </template>
 
 <style scoped>
-.coin-link {
-  color: #000000; /* your desired font color */
-  text-decoration: none; /* optional: remove underline */
-}
-
-.coin-link:hover {
-  color: #333333; /* slightly lighter on hover */
-}
-
 .page-wrapper {
   position: relative;
   width: 100%;
@@ -121,28 +85,6 @@ onMounted(fetchPrices)
   min-height: 100vh;
   width: 100%;
   position: relative;
-}
-
-.crypto-prices {
-  background-color: white;
-  border-radius: 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  will-change: transform;
-}
-
-.price-item {
-  height: 2.2rem;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
 }
 
 .container-avatar {
@@ -194,6 +136,14 @@ li {
   border-radius: 50%;
 }
 
+.crypto-button {
+  transition: transform 0.3s ease;
+}
+
+.crypto-button:hover {
+  transform: translateY(-3px);
+}
+
 @media (max-width: 600px) {
   h1.title {
     font-size: 1.8rem !important;
@@ -213,19 +163,6 @@ li {
 
 .dark-theme .v-app-bar {
   background-color: #1e1e1e !important;
-}
-
-.dark-theme .crypto-prices {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-.dark-theme .crypto-prices .coin-link {
-  color: #ffffff;
-}
-
-.dark-theme .crypto-prices .coin-link:hover {
-  color: #ffffff;
 }
 
 .dark-theme .mainpage {
