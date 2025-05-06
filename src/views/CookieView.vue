@@ -16,7 +16,7 @@ function handleClick() {
 }
 
 onMounted(() => {
-  ws = new WebSocket('ws://localhost:8080') // Replace with your WebSocket server URL
+  ws = new WebSocket('https://demoserver-54oa.onrender.com') // Replace with your WebSocket server URL
 
   ws.addEventListener('open', () => {
     ws.send(JSON.stringify({ type: 'init', count: store.clickCount }))
