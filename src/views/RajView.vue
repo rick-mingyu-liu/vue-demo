@@ -311,4 +311,20 @@ function submitForm() {
   }
 }
 
+.dark-theme .profile-name {
+  color: #ffffff;
+}
+
+.dark-theme .profile-title {
+  color: #e0e0e0;
+}
+
+.dark-theme .profile-bio {
+  color: #b0bec5;
+}
+
+.dark-theme .skills-title {
+  color: #ffffff;
+}
+
 </style>
