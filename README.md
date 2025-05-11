@@ -1,3 +1,6 @@
+# intro
+A Vue 3 website developed for the start of the co-op, used for self-introductions. It features functionalities such as an API endpoint for crypto prices, a WebSocket-powered cookie-clicking application, a theme manager utilizing Pinia, route management with Vue Router, and UI styling with Vuetify.
+
 # portaldemo
 
 This template should help get you started developing with Vue 3 in Vite.
