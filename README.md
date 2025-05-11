@@ -1,5 +1,5 @@
 # intro
-A Vue 3 website developed for the start of the co-op, used for self-introductions. It features functionalities such as an API endpoint for crypto prices, a WebSocket-powered cookie-clicking application, a theme manager utilizing Pinia, route management with Vue Router, and UI styling with Vuetify.
+A Vue 3 website developed for the start of the co-op, used for self-introductions and to showcase proficiency in implementing the Vue 3 framework. It features unique functionalities, including an API endpoint for crypto prices, a WebSocket-powered cookie-clicking application with a deployed backend, a theme manager utilizing Pinia, route management with Vue Router, and UI styling with Vuetify.
 
 # portaldemo
 
